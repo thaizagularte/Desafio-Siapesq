@@ -13,4 +13,4 @@
         npx ts-node  ./src/searchApi.ts
     Abra dois terminais para poder executar a aplicação
         No 1° execute npx ts-node .src/server.ts (Espere a mensagem de que servidor esta conectado)
-        No 2° Certifique de estar no caminho desafio-siapesq/interface, para então executar  comando npm start ./src/App.js
+        No 2° Certifique de estar no caminho desafio-siapesq/interface,execute o npm install para então executar  comando npm start ./src/App.js
