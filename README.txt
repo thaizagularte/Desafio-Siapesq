@@ -9,6 +9,9 @@
 
 #Para rodar a aplicação
     Crie um banco de dados postgres com nome: db_characters
+    Entre no arquivo .env e altere a URL do banco de acordo com o seu "postgresql://usuário:sua-senha@localhost:5432/db_characters"
+    Execute o comando 
+        npx prisma migrate dev para criação da tabela
     Execute no seu terminal o arquivo searchApi.ts
         npx ts-node  ./src/searchApi.ts
     Abra dois terminais para poder executar a aplicação
