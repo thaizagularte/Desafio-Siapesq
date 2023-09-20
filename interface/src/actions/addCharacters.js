@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import fetchData from './/App.js'
+import fetchData from '../App.js'
 
-export default function CharacterForm() {
+function CharacterForm() {
     const baseUrl = 'http://localhost:3001/characters';
     const [formData, setFormData] = useState({
       name: '',
@@ -13,7 +13,6 @@ export default function CharacterForm() {
       originName: '',
       locationName: '',
       image: '',
-      episode: '', // Manter como uma string inicialmente
       url: '',
     });
   
@@ -26,13 +25,10 @@ export default function CharacterForm() {
     };
   
     const handleSubmit = () => {
-      // Dividir a entrada do campo "episode" em uma matriz usando a vírgula como separador
-      const episodes = formData.episode.split(',');
   
       // Envie os dados do formulário para o servidor (POST request)
       axios.post(baseUrl, {
         ...formData,
-        episode: episodes, // Use a matriz de episódios aqui
       })
         .then((response) => {
           // Lógica para lidar com a resposta
@@ -42,6 +38,7 @@ export default function CharacterForm() {
         .catch((error) => {
           console.error('Erro ao adicionar personagem:', error);
         });
+        window.location.reload();
     };
   
     return (
@@ -129,10 +126,6 @@ export default function CharacterForm() {
             />
           </div>
           <div>
-            <label htmlFor="episode">Episode:</label>
-            <textarea id="episode" name="episode" value={formData.episode} onChange={handleInputChange}/>
-          </div>
-          <div>
             <label htmlFor="url">Url:</label>
             <input
               type="text"
@@ -150,3 +143,4 @@ export default function CharacterForm() {
     );
   }
   
+  export default CharacterForm;
