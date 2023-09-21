@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CharacterForm from './actions/addCharacters';
 import DeleteCharacter from './actions/delCharacter';
+import EditCharacter from './actions/editCharacter';
 
 function App() {
   const baseUrl = 'http://localhost:3001/characters';
   const [jsonData, setJsonData] = useState('');
   const [loading, setLoading] = useState(true); 
   const [isFormVisible, setIsFormVisible] = useState(false);
- 
+  const [formEdit, setFormEdit] = useState(false);
 
   useEffect(() => {
     axios.get(baseUrl)
@@ -26,15 +27,13 @@ function App() {
     DeleteCharacter(characterId);
   };
 
-  const handleEdit = (characterId) => {
-
-  };
+  //função para chamar o formulario 
   
   return (
     <div>
       <button onClick={() => setIsFormVisible(true)}> Adicionar </button>
       { isFormVisible && <CharacterForm /> }
-      
+      { formEdit && <EditCharacter />}
 
       {loading ? ( 
         <p> Caregando ... </p>
@@ -71,7 +70,7 @@ function App() {
                 </td>
                 <td>{character.url}</td>
                 <td>
-                    <button>
+                    <button onClick={() => setFormEdit(true)}>
                       Edit
                     </button>
                     <button onClick={() => handleDeleteClick(character.id)}>
