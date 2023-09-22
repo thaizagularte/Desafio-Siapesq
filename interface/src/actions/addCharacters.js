@@ -42,11 +42,11 @@ function CharacterForm() {
     };
   
     return (
-      <div>
-        <h2>To add character</h2>
+      <div className='container'>
+        <h2>Adicionar personagem</h2>
         <form>
           <div>
-            <label htmlFor="name">Name:</label>
+            <label htmlFor="name">Name: </label>
             <input
               type="text"
               id="name"
@@ -56,7 +56,7 @@ function CharacterForm() {
             />
           </div>
           <div>
-            <label htmlFor="status">Status:</label>
+            <label htmlFor="status">Status: </label>
             <input
               type="text"
               id="status"
@@ -66,7 +66,7 @@ function CharacterForm() {
             />
           </div>
           <div>
-            <label htmlFor="species">Species:</label>
+            <label htmlFor="species">Species: </label>
             <input
               type="text"
               id="species"
@@ -76,7 +76,7 @@ function CharacterForm() {
             />
           </div>
           <div>
-            <label htmlFor="type">Type:</label>
+            <label htmlFor="type">Type: </label>
             <input
               type="text"
               id="type"
@@ -86,7 +86,7 @@ function CharacterForm() {
             />
           </div>
           <div>
-            <label htmlFor="gender">Gender:</label>
+            <label htmlFor="gender">Gender: </label>
             <input
               type="text"
               id="gender"
@@ -96,7 +96,7 @@ function CharacterForm() {
             />
           </div>
           <div>
-            <label htmlFor="originName">Origin:</label>
+            <label htmlFor="originName">Origin: </label>
             <input
               type="text"
               id="originName"
@@ -106,7 +106,7 @@ function CharacterForm() {
             />
           </div>
           <div>
-            <label htmlFor="locationName">Location:</label>
+            <label htmlFor="locationName">Location: </label>
             <input
               type="text"
               id="locationName"
@@ -116,7 +116,7 @@ function CharacterForm() {
             />
           </div>
           <div>
-            <label htmlFor="image">Image:</label>
+            <label htmlFor="image">Image: </label>
             <input
               type="text"
               id="image"
@@ -126,7 +126,7 @@ function CharacterForm() {
             />
           </div>
           <div>
-            <label htmlFor="url">Url:</label>
+            <label htmlFor="url">Url: </label>
             <input
               type="text"
               id="url"

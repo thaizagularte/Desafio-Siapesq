@@ -44,11 +44,11 @@ function EditCharacter({characterId}) {
     };
 
     return (
-        <div>
-          <h2>Edit character - Preencha todos os dados para editar</h2>
+        <div className="container">
+          <h2>Editar personagem - Preencha todos os dados para editar</h2>
           <form onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="name">Name:</label>
+              <label htmlFor="name">Name: </label>
               <input
                 type="text"
                 id="name"
@@ -57,7 +57,7 @@ function EditCharacter({characterId}) {
                 onChange={(e) => setName(e.target.value)}/>
             </div>
             <div>
-              <label htmlFor="name">Status:</label>
+              <label htmlFor="name">Status: </label>
               <input
                 type="text"
                 id="status"
@@ -66,7 +66,7 @@ function EditCharacter({characterId}) {
                 onChange={(e) => setStatus(e.target.value)}/>
             </div>
             <div>
-              <label htmlFor="species">Species:</label>
+              <label htmlFor="species">Species: </label>
               <input
                 type="text"
                 id="species"
@@ -75,7 +75,7 @@ function EditCharacter({characterId}) {
                 onChange={(e) => setSpecies(e.target.value)}/>
             </div>
             <div>
-              <label htmlFor="type">Type:</label>
+              <label htmlFor="type">Type: </label>
               <input
                 type="text"
                 id="type"
@@ -84,7 +84,7 @@ function EditCharacter({characterId}) {
                 onChange={(e) => setType(e.target.value)}/>
             </div>
             <div>
-              <label htmlFor="gender">Gender:</label>
+              <label htmlFor="gender">Gender: </label>
               <input
                 type="text"
                 id="gender"
@@ -93,7 +93,7 @@ function EditCharacter({characterId}) {
                 onChange={(e) => setGender(e.target.value)}/>
             </div>
             <div>
-              <label htmlFor="originName">Origin:</label>
+              <label htmlFor="originName">Origin: </label>
               <input
                 type="text"
                 id="originName"
@@ -102,7 +102,7 @@ function EditCharacter({characterId}) {
                 onChange={(e) => setOriginName(e.target.value)}/>
             </div>
             <div>
-              <label htmlFor="locationName">Location:</label>
+              <label htmlFor="locationName">Location: </label>
               <input
                 type="text"
                 id="locationName"
@@ -111,7 +111,7 @@ function EditCharacter({characterId}) {
                 onChange={(e) => setLocationName(e.target.value)}/>
             </div>
             <div>
-              <label htmlFor="image">Image:</label>
+              <label htmlFor="image">Image: </label>
               <input
                 type="text"
                 id="image"
@@ -120,7 +120,7 @@ function EditCharacter({characterId}) {
                 onChange={(e) => setImage(e.target.value)}/>
             </div>
             <div>
-              <label htmlFor="url">Url:</label>
+              <label htmlFor="url">Url: </label>
               <input
                 type="text"
                 id="url"

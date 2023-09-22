@@ -3,17 +3,13 @@ import axios from 'axios';
 
 const prisma = new PrismaClient();
 
-// Função para buscar personagens da API e adicionar ao banco de dados
 async function searchAdd() {
   try {
-    // Fazer uma solicitação HTTP para a API para obter a lista de personagens
     const response = await axios.get('https://rickandmortyapi.com/api/character');
 
-    // Verificar se a solicitação foi bem-sucedida e se os dados estão presentes
     if (response.status === 200 && response.data.results) {
       const characters = response.data.results;
 
-      // Iterar sobre a lista de personagens e adicioná-los ao banco de dados
       for (const character of characters) {
         await prisma.character.create({
           data: {
@@ -41,5 +37,4 @@ async function searchAdd() {
   }
 }
 
-// Chamando função para buscar e adicionar os personagens
 searchAdd();

@@ -1,3 +1,12 @@
+.body div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body div h2 {
+    text-align: center;
+}
 .body table {
     width: 100%;
     border-collapse: collapse;
@@ -6,36 +15,45 @@
 }
 
 .body table th, table td {
-    border: 1px solid #ddd;
+    border: 1px solid #747373;
     text-align: center;
 }
 
 .body table th {
-    background-color: #f0f0f0;
+    background-color: #958f8f;
 }
 
 .body table img {
     max-width: 50px;
     max-height: 50px;
 }
-.body button{
-    padding: 1ex;
-    margin-bottom: 5px;
+
+.body .bttAdd {
+    margin-bottom: 7px;
+    width: 30%;
+    padding: 4px;
 }
 
-.body .action {
-    padding: 1px;
-    margin-bottom: 1px;
+.body .bttEd{
+    width: 50%;
+    margin-bottom: 2px;
 }
-
-/*Style do formulario*/
-
-label {
-    text-align: right; /* Alinha os rótulos à direita */
-    display: inline-block; /* Para controlar a largura dos rótulos */
-    width: 100px; /* Define a largura desejada para os rótulos */
+.body .bttDel{
+    width: 50%;
+    margin-top: 2px;
+}
+.container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center; 
   }
-  
-  input {
-    display: inline-block; /* Para que os campos de entrada fiquem em linha com os rótulos */
-  }
+
+form {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}

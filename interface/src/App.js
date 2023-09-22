@@ -36,7 +36,9 @@ function App() {
 
   return (
     <div className='body'>
-      <button onClick={() => setIsFormVisible(true)}> To Add </button>
+      <div>
+        <button onClick={() => setIsFormVisible(true)} className='bttAdd'> Adicionar </button>
+      </div>
       { isFormVisible && <CharacterForm /> }
       { formEdit }
       {editId !== null ? (
@@ -46,7 +48,7 @@ function App() {
       ) : null}
 
       {loading ? ( 
-        <p> Caregando ... </p>
+        <p> Carregando ... </p>
       ) : (
         <table>
           <thead>
@@ -80,12 +82,13 @@ function App() {
                 </td>
                 <td>{character.url}</td>
                 <td>
-                    <button onClick={() => handleEditClick(character.id)} className='action'>
-                      Edit
-                    </button>
-                    <button onClick={() => handleDeleteClick(character.id)} className='action'>
-                      Delete
-                    </button>
+                    <div><button onClick={() => handleEditClick(character.id)} className='bttEd'>
+                      Editar
+                    </button></div>
+
+                    <div><button onClick={() => handleDeleteClick(character.id)} className='bttDel'>
+                      Deletar
+                    </button></div>
                 </td>       
               </tr>
             ))}
