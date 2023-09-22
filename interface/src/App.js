@@ -3,6 +3,7 @@ import axios from 'axios';
 import CharacterForm from './actions/addCharacters';
 import DeleteCharacter from './actions/delCharacter';
 import EditCharacter from './actions/editCharacter';
+import './App.css';
 
 function App() {
   const baseUrl = 'http://localhost:3001/characters';
@@ -10,6 +11,7 @@ function App() {
   const [loading, setLoading] = useState(true); 
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [formEdit, setFormEdit] = useState(false);
+  const [editId, setEditId] = useState(null);
 
   useEffect(() => {
     axios.get(baseUrl)
@@ -27,13 +29,21 @@ function App() {
     DeleteCharacter(characterId);
   };
 
-  //função para chamar o formulario 
-  
+  const handleEditClick = (attId) => {
+    setFormEdit(true);
+    setEditId(attId);
+  };
+
   return (
-    <div>
-      <button onClick={() => setIsFormVisible(true)}> Adicionar </button>
+    <div className='body'>
+      <button onClick={() => setIsFormVisible(true)}> To Add </button>
       { isFormVisible && <CharacterForm /> }
-      { formEdit && <EditCharacter />}
+      { formEdit }
+      {editId !== null ? (
+        <EditCharacter
+          characterId = {editId}
+        />
+      ) : null}
 
       {loading ? ( 
         <p> Caregando ... </p>
@@ -66,14 +76,14 @@ function App() {
                 <td>{character.originName}</td>
                 <td>{character.locationName}</td>
                 <td>
-                  <img src={character.image} alt={`Imagem de ${character.name}`} height={50} width={50} />
+                  <img src={character.image} alt={`Imagem de ${character.name}`}/>
                 </td>
                 <td>{character.url}</td>
                 <td>
-                    <button onClick={() => setFormEdit(true)}>
+                    <button onClick={() => handleEditClick(character.id)} className='action'>
                       Edit
                     </button>
-                    <button onClick={() => handleDeleteClick(character.id)}>
+                    <button onClick={() => handleDeleteClick(character.id)} className='action'>
                       Delete
                     </button>
                 </td>       

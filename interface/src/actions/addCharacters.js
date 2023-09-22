@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import fetchData from '../App.js'
+import '../App.css';
 
 function CharacterForm() {
     const baseUrl = 'http://localhost:3001/characters';
@@ -26,19 +27,18 @@ function CharacterForm() {
   
     const handleSubmit = () => {
   
-      // Envie os dados do formulário para o servidor (POST request)
       axios.post(baseUrl, {
         ...formData,
       })
         .then((response) => {
-          // Lógica para lidar com a resposta
+          window.location.reload();
           console.log('Personagem adicionado:', response.data);
           fetchData();
+          
         })
         .catch((error) => {
           console.error('Erro ao adicionar personagem:', error);
         });
-        window.location.reload();
     };
   
     return (
