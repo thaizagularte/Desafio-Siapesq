@@ -1,6 +1,5 @@
 #Funcionalidades
     A aplicação tem as rotas para realizar a criação de um novo personagem, a edição e exclusão pelo id
-    *Mas funçao de edição não foi configurada para o usuário
 
 #Certifique que tem as ferramentas necessárias 
     Execute no terminal 
@@ -10,8 +9,8 @@
 #Para rodar a aplicação
     Crie um banco de dados postgres com nome: db_characters
     Entre no arquivo .env e altere a URL do banco de acordo com o seu "postgresql://usuário:sua-senha@localhost:5432/db_characters"
-    Execute o comando 
-        npx prisma migrate dev para criação da tabela
+    Execute o comando npx prisma migrate dev 
+        para criação da tabela
     Execute no seu terminal o arquivo searchApi.ts
         npx ts-node  ./src/searchApi.ts
     Abra dois terminais para poder executar a aplicação
