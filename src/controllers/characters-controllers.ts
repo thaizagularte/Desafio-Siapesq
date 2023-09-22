@@ -13,6 +13,25 @@ export const getAllCharacters = async (req: Request, res: Response) => {
   }
 };
 
+export const getCharacterById = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const character = await prisma.character.findUnique({
+      where: { id: parseInt(id) },
+    });
+
+    if (!character) {
+      return res.status(404).json({ error: 'Personagem não encontrado' });
+    }
+    res.status(200).json(character);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erro ao buscar personagem por ID' });
+  } finally {
+    await prisma.$disconnect(); 
+  }
+};
+
 export const updateCharacter = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
