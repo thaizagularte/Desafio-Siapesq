@@ -11,8 +11,8 @@
     Entre no arquivo .env e altere a URL do banco de acordo com o seu "postgresql://usuário:sua-senha@localhost:5432/db_characters"
     Execute o comando npx prisma migrate dev 
         para criação da tabela
-    Execute no seu terminal o arquivo searchApi.ts
+    Execute no seu terminal o arquivo searchApi.ts para buscar os dados da API e adicionar no banco local
         npx ts-node  ./src/searchApi.ts
     Abra dois terminais para poder executar a aplicação
-        No 1° execute npx ts-node .src/server.ts (Espere a mensagem de que servidor esta conectado)
-        No 2° Certifique de estar no caminho desafio-siapesq/interface,execute o npm install para então executar  comando npm start ./src/App.js
+        No 1° execute npx ts-node src/server.ts (Espere a mensagem de que servidor esta conectado)
+        No 2° Certifique de estar no caminho desafio-siapesq/interface e execute o npm install para então executar  comando npm start src/App.js
